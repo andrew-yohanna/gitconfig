@@ -7,7 +7,7 @@
         pr = pull --rebase
         cam = commit --amend -CHEAD
 [user]
-        email = andrew.yohanna@corelogic.com.au
+        email = xxxx
         name = Andrew Yohanna
 [core]
         editor = vim
