@@ -1,0 +1,15 @@
+[alias]
+        addp = add -p
+        co = checkout
+        cm = commit -m
+        st = status
+        lg = log --pretty=format:\"%C(red)%h %C(cyan)%ad %C(reset)| %s%C(bold yellow)%d %C(bold blue)[%an]\" --graph --date=format:'%Y-%m-%d %I:%M %p'
+        pr = pull --rebase
+        cam = commit --amend -CHEAD
+[user]
+        email = andrew.yohanna@corelogic.com.au
+        name = Andrew Yohanna
+[core]
+        editor = vim
+[merge]
+        tool = opendiff
