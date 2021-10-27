@@ -1,3 +1,17 @@
+[core]
+        editor = vim
+        excludesfile = /Users/andrew.yohanna/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[merge]
+        tool = opendiff
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[user]
+	name = Andrew Yohanna
+	email = andrew.yohanna@tigerspike.com
 [alias]
         addp = add -p
         co = checkout
@@ -6,10 +20,11 @@
         lg = log --pretty=format:\"%C(red)%h %C(cyan)%ad %C(reset)| %s%C(bold yellow)%d %C(bold blue)[%an]\" --graph --date=format:'%Y-%m-%d %I:%M %p'
         pr = pull --rebase
         cam = commit --amend -CHEAD
-[user]
-        email = xxxx
-        name = Andrew Yohanna
-[core]
-        editor = vim
-[merge]
-        tool = opendiff
+	branch-name = "!git rev-parse --abbrev-ref HEAD"
+        po = "!git push -u origin $(git branch-name)"
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
